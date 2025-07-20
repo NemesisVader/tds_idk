@@ -4,12 +4,14 @@ from typing import Union
 import json
 from datetime import datetime
 import uvicorn
+import os
 
 # Replace this with your IIT‑M email
 YOUR_EMAIL = "23f2004203@ds.study.iitm.ac.in"
 
 # Load the dataset once at startup
-with open("q-fastapi-llm-query.json", "r") as f:
+DATA_PATH = os.path.join(os.path.dirname(__file__), "q-fastapi-llm-query.json")
+with open(DATA_PATH, "r") as f:
     data = json.load(f)
 
 app = FastAPI()
