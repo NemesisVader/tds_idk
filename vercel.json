@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "api/query.py", "use": "@vercel/python" }
+  ],
+  "routes": [
+    { "src": "/query", "dest": "api/query.py" },
+    { "src": "/correlation.json", "dest": "/correlation.json" }
+  ]
+}
